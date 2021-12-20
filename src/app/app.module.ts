@@ -9,9 +9,10 @@ import { MatCardModule } from '@angular/material/card';
 
 import { HeaderComponent } from './components/header/header.component';
 import { StudentcardComponent } from './components/studentcard/studentcard.component';
+import { StudentformComponent } from './components/studentcard/studentform/studentform.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, StudentcardComponent],
+  declarations: [AppComponent, HeaderComponent, StudentcardComponent, StudentformComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
