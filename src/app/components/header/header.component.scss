@@ -1,0 +1,5 @@
+@use "../../../assets/color" as color;
+
+header {
+  background-color: color.$header;
+}
