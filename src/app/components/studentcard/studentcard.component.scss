@@ -1,3 +1,18 @@
+.navs {
+  input,
+  button {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+  }
+  button {
+    background-color: whitesmoke;
+  }
+  ::placeholder {
+    font-size: 0.8rem;
+  }
+}
+
 .card {
   border-bottom: 8px solid transparent;
   border-radius: 10px;

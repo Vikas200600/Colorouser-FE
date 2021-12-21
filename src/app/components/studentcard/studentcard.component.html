@@ -1,4 +1,9 @@
-<div class="container card-container py-5">
+<div class="container navs pt-3 d-flex justify-content-end">
+  <input class="py-2 px-3 me-2" placeholder="Search Students" />
+  <button routerLink="/form" class="py-2 px-3 me-2">Add Student</button>
+  <button routerLink="/group/form" class="py-2 px-3">Add Group</button>
+</div>
+<div class="container card-container py-3">
   <div class="row row-cols-lg-5 g-4">
     <div *ngFor="let student of studentData['keys']" class="col">
       <mat-card
