@@ -1,154 +1,41 @@
 <div class="container card-container py-5">
   <div class="row row-cols-lg-5 g-4">
-    <div class="col">
-      <mat-card class="card p-0" style="border-color: hsl(217, 89%, 61%)">
+    <div *ngFor="let student of studentData['keys']" class="col">
+      <mat-card
+        class="card p-0"
+        [style.borderColor]="studentData[student].color"
+      >
         <mat-card-content class="card-content p-3">
-          <div class="clip-path" style="background-color: #4285f4"></div>
+          <div
+            class="clip-path"
+            [style.backgroundColor]="studentData[student].color"
+          ></div>
           <div class="card-content-icon d-flex justify-content-end mb-1">
             <i class="far fa-edit me-2"></i>
             <i class="far fa-trash-alt"></i>
           </div>
           <img src="https://picsum.photos/200" alt="profile" class="ms-3" />
-          <h2 class="my-2" style="font-weight: 700">Some Name</h2>
+          <h2
+            class="my-2 ps-3"
+            style="font-weight: 700"
+            [style.color]="studentData[student].color"
+          >
+            {{ studentData[student].name }}
+          </h2>
           <ul class="card-content-details pb-2">
-            <li><span>Mobile: </span>7898789783</li>
-            <li><span>Class: </span>7C</li>
-            <li><span>Group: </span>Blue</li>
-            <li><span>Blood Group: </span>O+</li>
+            <li><span>Mobile: </span>{{ studentData[student].mobile }}</li>
+            <li><span>Class: </span>{{ studentData[student].class }}</li>
+            <li><span>Group: </span>{{ studentData[student].house }}</li>
+            <li>
+              <span>Blood Group: </span>{{ studentData[student].bloodGroup }}
+            </li>
           </ul>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="col">
-      <mat-card class="card p-0" style="border-color: #34ab53">
-        <mat-card-content class="card-content p-3">
-          <div class="clip-path" style="background-color: #34ab53"></div>
-          <div class="card-content-icon d-flex justify-content-end mb-1">
-            <i class="far fa-edit me-2"></i>
-            <i class="far fa-trash-alt"></i>
-          </div>
-          <img src="https://picsum.photos/200" alt="profile" class="ms-3" />
-          <h2 class="my-2" style="font-weight: 700">Some Name</h2>
-          <ul class="card-content-details pb-2">
-            <li><span>Mobile: </span>7898789783</li>
-            <li><span>Class: </span>7C</li>
-            <li><span>Group: </span>Blue</li>
-            <li><span>Blood Group: </span>O+</li>
-          </ul>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="col">
-      <mat-card class="card p-0" style="border-color: #34ab53">
-        <mat-card-content class="card-content p-3">
-          <div class="clip-path" style="background-color: #34ab53"></div>
-          <div class="card-content-icon d-flex justify-content-end mb-1">
-            <i class="far fa-edit me-2"></i>
-            <i class="far fa-trash-alt"></i>
-          </div>
-          <img src="https://picsum.photos/200" alt="profile" class="ms-3" />
-          <h2 class="my-2" style="font-weight: 700">Some Name</h2>
-          <ul class="card-content-details pb-2">
-            <li><span>Mobile: </span>7898789783</li>
-            <li><span>Class: </span>7C</li>
-            <li><span>Group: </span>Blue</li>
-            <li><span>Blood Group: </span>O+</li>
-          </ul>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="col">
-      <mat-card class="card p-0" style="border-color: #fbbc05">
-        <mat-card-content class="card-content p-3">
-          <div class="clip-path" style="background-color: #fbbc05"></div>
-          <div class="card-content-icon d-flex justify-content-end mb-1">
-            <i class="far fa-edit me-2"></i>
-            <i class="far fa-trash-alt"></i>
-          </div>
-          <img src="https://picsum.photos/200" alt="profile" class="ms-3" />
-          <h2 class="my-2" style="font-weight: 700">Some Name</h2>
-          <ul class="card-content-details pb-2">
-            <li><span>Mobile: </span>7898789783</li>
-            <li><span>Class: </span>7C</li>
-            <li><span>Group: </span>Blue</li>
-            <li><span>Blood Group: </span>O+</li>
-          </ul>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="col">
-      <mat-card class="card p-0" style="border-color: #4285f4">
-        <mat-card-content class="card-content p-3">
-          <div class="clip-path" style="background-color: #4285f4"></div>
-          <div class="card-content-icon d-flex justify-content-end mb-1">
-            <i class="far fa-edit me-2"></i>
-            <i class="far fa-trash-alt"></i>
-          </div>
-          <img src="https://picsum.photos/200" alt="profile" class="ms-3" />
-          <h2 class="my-2" style="font-weight: 700">Some Name</h2>
-          <ul class="card-content-details pb-2">
-            <li><span>Mobile: </span>7898789783</li>
-            <li><span>Class: </span>7C</li>
-            <li><span>Group: </span>Blue</li>
-            <li><span>Blood Group: </span>O+</li>
-          </ul>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="col">
-      <mat-card class="card p-0" style="border-color: #fbbc05">
-        <mat-card-content class="card-content p-3">
-          <div class="clip-path" style="background-color: #fbbc05"></div>
-          <div class="card-content-icon d-flex justify-content-end mb-1">
-            <i class="far fa-edit me-2"></i>
-            <i class="far fa-trash-alt"></i>
-          </div>
-          <img src="https://picsum.photos/200" alt="profile" class="ms-3" />
-          <h2 class="my-2" style="font-weight: 700">Some Name</h2>
-          <ul class="card-content-details pb-2">
-            <li><span>Mobile: </span>7898789783</li>
-            <li><span>Class: </span>7C</li>
-            <li><span>Group: </span>Blue</li>
-            <li><span>Blood Group: </span>O+</li>
-          </ul>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="col">
-      <mat-card class="card p-0" style="border-color: #34ab53">
-        <mat-card-content class="card-content p-3">
-          <div class="clip-path" style="background-color: #34ab53"></div>
-          <div class="card-content-icon d-flex justify-content-end mb-1">
-            <i class="far fa-edit me-2"></i>
-            <i class="far fa-trash-alt"></i>
-          </div>
-          <img src="https://picsum.photos/200" alt="profile" class="ms-3" />
-          <h2 class="my-2" style="font-weight: 700">Some Name</h2>
-          <ul class="card-content-details pb-2">
-            <li><span>Mobile: </span>7898789783</li>
-            <li><span>Class: </span>7C</li>
-            <li><span>Group: </span>Blue</li>
-            <li><span>Blood Group: </span>O+</li>
-          </ul>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="col">
-      <mat-card class="card p-0" style="border-color: #34ab53">
-        <mat-card-content class="card-content p-3">
-          <div class="clip-path" style="background-color: #34ab53"></div>
-          <div class="card-content-icon d-flex justify-content-end mb-1">
-            <i class="far fa-edit me-2"></i>
-            <i class="far fa-trash-alt"></i>
-          </div>
-          <img src="https://picsum.photos/200" alt="profile" class="ms-3" />
-          <h2 class="my-2" style="font-weight: 700">Some Name</h2>
-          <ul class="card-content-details pb-2">
-            <li><span>Mobile: </span>7898789783</li>
-            <li><span>Class: </span>7C</li>
-            <li><span>Group: </span>Blue</li>
-            <li><span>Blood Group: </span>O+</li>
-          </ul>
+          <h1
+            class="card-content-id"
+            [style.color]="studentData[student].color"
+          >
+            {{ studentData[student].id }}
+          </h1>
         </mat-card-content>
       </mat-card>
     </div>
