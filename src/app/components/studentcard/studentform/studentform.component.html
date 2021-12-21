@@ -1,1 +1,44 @@
-<p>studentform works!</p>
+<div class="container my-5 w-50 pb-5">
+  <mat-card class="form-container">
+    <div class="clip-path" style="background-color: #34ab53"></div>
+    <mat-card-header class="text-center"><h2>Add Student</h2></mat-card-header>
+    <form>
+      <mat-card-content class="d-flex flex-column">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Class</mat-label>
+          <input matInput autocomplete="off" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Select Group</mat-label>
+          <mat-select>
+            <mat-option value="option1">option1</mat-option>
+            <mat-option value="option2">option2</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Select Blood Group</mat-label>
+          <mat-select>
+            <mat-option value="option1">option1</mat-option>
+            <mat-option value="option2">option2</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" class="w-25 m-auto">
+          SUBMIT
+        </button>
+      </mat-card-content>
+    </form>
+  </mat-card>
+</div>

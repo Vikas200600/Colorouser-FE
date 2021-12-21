@@ -22,3 +22,35 @@ ul {
 ul {
   list-style: none;
 }
+
+.form-container {
+  margin-bottom: 2rem;
+  border-bottom: 8px solid #34ab53;
+  button {
+    background-color: #34ab53;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.form-container {
+  position: relative;
+  border-radius: 20px;
+  z-index: 1;
+  &:hover .clip-path {
+    clip-path: ellipse(75% 75%);
+  }
+  .clip-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: -1;
+    clip-path: ellipse(30% 100% at 10% 20%);
+    transition: clip-path 0.5s ease-in-out;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
