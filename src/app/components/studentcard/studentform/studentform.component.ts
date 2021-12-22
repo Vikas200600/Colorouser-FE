@@ -58,6 +58,6 @@ export class StudentformComponent implements OnInit {
   }
 
   submitStudentData() {
-    this.dataService.addStudent(this.studentForm.value);
+    // this.dataService.addStudent(this.studentForm.value);
   }
 }

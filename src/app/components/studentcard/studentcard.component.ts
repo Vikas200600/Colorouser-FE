@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
@@ -7,18 +8,24 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./studentcard.component.scss'],
 })
 export class StudentcardComponent implements OnInit {
-  studentData: object = {};
+  studentData: object;
 
-  constructor(private dataService: DataService) {
-    this.dataService.studentSubject.subscribe((data) => {
-      this.studentData = data;
-    });
+  constructor(private dataService: DataService, private http: HttpClient) {
+    console.log('studentcard comp - constructor called');
+    this.getStudentsData();
   }
 
   ngOnInit(): void {
+    // this.studentData = this.dataService.getAllStudents();
     console.log(
       'studentcard comp - Oninit -- this.studentdata',
       this.studentData
     );
+  }
+
+  getStudentsData() {
+    this.dataService.studentSubject.subscribe((data: object) => {
+      this.studentData = data;
+    });
   }
 }

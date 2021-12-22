@@ -20,6 +20,6 @@ export class GroupformComponent implements OnInit {
   ngOnInit(): void {}
 
   submitGroupForm() {
-    this.dataService.addGroup(this.groupForm.value);
+    // this.dataService.addGroup(this.groupForm.value);
   }
 }
