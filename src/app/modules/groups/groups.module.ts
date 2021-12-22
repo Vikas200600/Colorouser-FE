@@ -10,12 +10,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { GroupsRoutingModule } from './groups-routing.module';
 import { GroupsComponent } from './groups.component';
 import { GroupformComponent } from './groupform/groupform.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [GroupsComponent, GroupformComponent],
   imports: [
     CommonModule,
     GroupsRoutingModule,
+    ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,

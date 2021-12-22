@@ -2,43 +2,54 @@
   <mat-card class="form-container">
     <div class="clip-path" style="background-color: #34ab53"></div>
     <mat-card-header class="text-center"><h2>Add Student</h2></mat-card-header>
-    <form>
+    <form [formGroup]="studentForm" (ngSubmit)="submitStudentData()">
       <mat-card-content class="d-flex flex-column">
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
-          <input matInput autocomplete="off" />
+          <input matInput autocomplete="off" formControlName="name" />
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Mobile</mat-label>
-          <input matInput autocomplete="off" />
+          <input matInput autocomplete="off" formControlName="mobile" />
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Class</mat-label>
-          <input matInput autocomplete="off" />
+          <input matInput autocomplete="off" formControlName="class" />
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Select Group</mat-label>
-          <mat-select>
-            <mat-option value="option1">option1</mat-option>
-            <mat-option value="option2">option2</mat-option>
+          <mat-select formControlName="house" (selectionChange)="setColor()">
+            <mat-option *ngFor="let group of groupList" [value]="group">{{
+              group
+            }}</mat-option>
           </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Select Blood Group</mat-label>
-          <mat-select>
-            <mat-option value="option1">option1</mat-option>
-            <mat-option value="option2">option2</mat-option>
+          <mat-select formControlName="bloodGroup">
+            <mat-option
+              *ngFor="let bloodGroup of bloodGroupsList"
+              [value]="bloodGroup"
+            >
+              {{ bloodGroup }}
+            </mat-option>
           </mat-select>
         </mat-form-field>
 
-        <button mat-raised-button type="submit" class="w-25 m-auto">
+        <button
+          mat-raised-button
+          type="submit"
+          class="w-25 m-auto"
+          [disabled]="!studentForm.valid"
+        >
           SUBMIT
         </button>
       </mat-card-content>
     </form>
   </mat-card>
+  <button routerLink="/">Back</button>
 </div>

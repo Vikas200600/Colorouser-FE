@@ -1,5 +1,5 @@
 export const studentData = {
-  Ghosh: {
+  '01': {
     id: '01',
     name: 'Ghosh',
     profile: null,
@@ -9,7 +9,7 @@ export const studentData = {
     color: '#00a1f1',
     bloodGroup: 'O+',
   },
-  Davis: {
+  '02': {
     id: '02',
     name: 'Davis',
     profile: null,
@@ -19,7 +19,7 @@ export const studentData = {
     color: '#ffbb00',
     bloodGroup: 'AB+',
   },
-  Klein: {
+  '03': {
     id: '03',
     name: 'Klein',
     profile: null,
@@ -29,7 +29,7 @@ export const studentData = {
     color: '#00a1f1',
     bloodGroup: 'AB-',
   },
-  Nalty: {
+  '04': {
     id: '04',
     name: 'Nalty',
     profile: null,
@@ -39,7 +39,7 @@ export const studentData = {
     color: '#f65314',
     bloodGroup: 'AB+',
   },
-  Reily: {
+  '05': {
     id: '05',
     name: 'Reily',
     profile: null,
@@ -49,7 +49,7 @@ export const studentData = {
     color: '#7cbb00',
     bloodGroup: 'A+',
   },
-  Usman: {
+  '06': {
     id: '06',
     name: 'Usman',
     profile: null,
@@ -59,7 +59,7 @@ export const studentData = {
     color: '#f65314',
     bloodGroup: 'B+',
   },
-  Xiang: {
+  '07': {
     id: '07',
     name: 'Xiang',
     profile: null,
@@ -69,7 +69,7 @@ export const studentData = {
     color: '#ffbb00',
     bloodGroup: 'AB-',
   },
-  Trott: {
+  '08': {
     id: '08',
     name: 'Trott',
     profile: null,
@@ -79,7 +79,7 @@ export const studentData = {
     color: '#00a1f1',
     bloodGroup: 'A-',
   },
-  Yakub: {
+  '09': {
     id: '09',
     name: 'Yakub',
     profile: null,
@@ -89,7 +89,7 @@ export const studentData = {
     color: '#ffbb00',
     bloodGroup: 'AB+',
   },
-  Valdo: {
+  '10': {
     id: '10',
     name: 'Valdo',
     profile: null,
@@ -99,7 +99,7 @@ export const studentData = {
     color: '#7cbb00',
     bloodGroup: 'B+',
   },
-  Jones: {
+  '11': {
     id: '11',
     name: 'Jones',
     profile: null,
@@ -109,7 +109,7 @@ export const studentData = {
     color: '#00a1f1',
     bloodGroup: 'O+',
   },
-  Quinn: {
+  '12': {
     id: '12',
     name: 'Davis',
     profile: null,
@@ -119,7 +119,7 @@ export const studentData = {
     color: '#ffbb00',
     bloodGroup: 'AB+',
   },
-  Ochoa: {
+  '13': {
     id: '13',
     name: 'Ochoa',
     profile: null,
@@ -130,18 +130,18 @@ export const studentData = {
     bloodGroup: 'AB+',
   },
   keys: [
-    'Ghosh',
-    'Davis',
-    'Klein',
-    'Nalty',
-    'Reily',
-    'Usman',
-    'Xiang',
-    'Trott',
-    'Yakub',
-    'Valdo',
-    'Jones',
-    'Quinn',
-    'Ochoa',
+    '01',
+    '02',
+    '03',
+    '04',
+    '05',
+    '06',
+    '07',
+    '08',
+    '09',
+    '10',
+    '11',
+    '12',
+    '13',
   ],
 };

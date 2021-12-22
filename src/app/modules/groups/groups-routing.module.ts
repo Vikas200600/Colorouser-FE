@@ -5,7 +5,7 @@ import { GroupsComponent } from './groups.component';
 
 const routes: Routes = [
   { path: '', component: GroupsComponent },
-  { path: 'form', component: GroupformComponent },
+  { path: 'add-group', component: GroupformComponent },
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
 <div class="container navs pt-3 d-flex justify-content-end">
   <input class="py-2 px-3 me-2" placeholder="Search Students" />
-  <button routerLink="/form" class="py-2 px-3 me-2">Add Student</button>
-  <button routerLink="/group/form" class="py-2 px-3">Add Group</button>
+  <button routerLink="/add-student" class="py-2 px-3 me-2">Add Student</button>
+  <button routerLink="/group/add-group" class="py-2 px-3">Add Group</button>
 </div>
 <div class="container card-container py-3">
   <div class="row row-cols-lg-5 g-4">
@@ -16,7 +16,10 @@
             [style.backgroundColor]="studentData[student].color"
           ></div>
           <div class="card-content-icon d-flex justify-content-end mb-1">
-            <i class="far fa-edit me-2"></i>
+            <i
+              [routerLink]="'edit-student/' + studentData[student].id"
+              class="far fa-edit me-2"
+            ></i>
             <i class="far fa-trash-alt"></i>
           </div>
           <img src="https://picsum.photos/200" alt="profile" class="ms-3" />

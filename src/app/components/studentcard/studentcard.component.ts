@@ -7,10 +7,10 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./studentcard.component.scss'],
 })
 export class StudentcardComponent implements OnInit {
-  studentData: object;
+  studentData: object = {};
 
   constructor(private dataService: DataService) {
-    this.dataService.studentSubject.subscribe((data: object) => {
+    this.dataService.studentSubject.subscribe((data) => {
       this.studentData = data;
     });
   }

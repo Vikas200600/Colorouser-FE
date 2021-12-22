@@ -2,22 +2,28 @@
   <mat-card class="form-container">
     <div class="clip-path" style="background-color: #34ab53"></div>
     <mat-card-header class="text-center"><h2>Add Group</h2></mat-card-header>
-    <form>
+    <form [formGroup]="groupForm" (ngSubmit)="submitGroupForm()">
       <mat-card-content class="d-flex flex-column">
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
-          <input matInput autocomplete="off" />
+          <input matInput autocomplete="off" formControlName="groupName" />
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Color</mat-label>
-          <input matInput autocomplete="off" />
+          <input matInput autocomplete="off" formControlName="color" />
         </mat-form-field>
 
-        <button mat-raised-button type="submit" class="w-25 m-auto">
+        <button
+          mat-raised-button
+          type="submit"
+          class="w-25 m-auto"
+          [disabled]="!groupForm.valid"
+        >
           SUBMIT
         </button>
       </mat-card-content>
     </form>
   </mat-card>
+  <button routerLink="/">Back</button>
 </div>
