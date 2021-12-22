@@ -43,6 +43,7 @@ export class StudentformComponent implements OnInit {
       bloodGroup: ['O+', Validators.required],
     });
     this.dataService.groupSubject.subscribe((data) => {
+      console.log('studentForm subs ', data);
       this.groupData = data;
       this.groupList = this.groupData['keys'];
     });
@@ -58,6 +59,6 @@ export class StudentformComponent implements OnInit {
   }
 
   submitStudentData() {
-    // this.dataService.addStudent(this.studentForm.value);
+    this.dataService.addStudent(this.studentForm.value);
   }
 }

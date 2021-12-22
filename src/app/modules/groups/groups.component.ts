@@ -13,12 +13,16 @@ export class GroupsComponent implements OnInit {
     private dataService: DataService,
     private cdr: ChangeDetectorRef
   ) {
-    this.dataService.groupSubject.subscribe((data) => {
-      this.groupData = data;
-    });
+    this.getGroupsData();
   }
 
   ngOnInit(): void {
     console.log('group comp - Oninit -- this.groupData', this.groupData);
+  }
+
+  getGroupsData() {
+    this.dataService.groupSubject.subscribe((chatData: object) => {
+      this.groupData = chatData;
+    });
   }
 }

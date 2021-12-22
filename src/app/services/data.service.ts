@@ -9,13 +9,20 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class DataService {
-  studentSubject = new Subject<object>();
-  groupSubject = new Subject<object>();
+  studentSubject = new BehaviorSubject<object>({});
+  groupSubject = new BehaviorSubject<object>({});
 
   constructor(private http: HttpClient) {
     console.log('dataservice - constructor called');
+    this.fetchUpdatedData();
+  }
+
+  fetchUpdatedData() {
     this.http.get('api/students').subscribe((res) => {
-      console.log('dataservice - constructor -- getStu http called');
+      console.log(
+        'dataservice - constructor -- getStu http called',
+        res['data']
+      );
       this.studentSubject.next(res['data']);
     });
     this.http.get('api/groups').subscribe((res) => {
@@ -24,32 +31,13 @@ export class DataService {
     });
   }
 
-  // getAllStudents(): object {
-  //   let studentData: object;
-  //   this.http.get('api/students').subscribe((res) => {
-  //     console.log('dataservice - getAllStudents() -- getStu http called');
-  //     studentData = res['data'];
-  //     // this.studentSubject.next(res['data']);
-  //   });
-  //   return studentData;
-  // }
-
-  // addStudent(studentDetails: Student) {
-  //   let newId = (
-  //     Math.max(...this.studentData['keys'].map((id: string) => parseInt(id))) +
-  //     1
-  //   ).toString();
-
-  //   studentDetails = {
-  //     id: newId,
-  //     profile: null,
-  //     ...studentDetails,
-  //   };
-  //   this.studentData[newId] = studentDetails;
-  //   this.studentData['keys'].push(newId);
-  //   console.log(this.studentData);
-  //   this.studentSubject.next(this.studentData);
-  // }
+  addStudent(studentDetails: Student) {
+    this.http
+      .post('api/add-student', { ...studentDetails })
+      .subscribe((addedData) => {
+        console.log('AddStudent() == addedData', addedData);
+      });
+  }
 
   // addGroup(newGroupDetails) {
   //   newGroupDetails = {

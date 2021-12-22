@@ -12,11 +12,11 @@ export class StudentcardComponent implements OnInit {
 
   constructor(private dataService: DataService, private http: HttpClient) {
     console.log('studentcard comp - constructor called');
+    this.dataService.fetchUpdatedData();
     this.getStudentsData();
   }
 
   ngOnInit(): void {
-    // this.studentData = this.dataService.getAllStudents();
     console.log(
       'studentcard comp - Oninit -- this.studentdata',
       this.studentData

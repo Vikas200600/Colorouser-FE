@@ -28,18 +28,15 @@
           >
             <div *ngFor="let student of groupData[group].members" class="col">
               <mat-card
-                class="
-                  member-card
-                  p-2
-                  d-flex
-                  justify-content-center
-                  align-items-center
-                "
+                class="member-card p-2"
                 [style.border-color]="groupData[group].color"
               >
-                <mat-card-content>
+                <mat-card-content class="d-flex align-items-center">
+                  <h1 class="m-0" [style.color]="groupData[group].color">
+                    {{ student.id }}
+                  </h1>
                   <h3 class="m-0 ms-2">
-                    {{ student }}
+                    {{ student.name }}
                   </h3>
                 </mat-card-content>
               </mat-card>
