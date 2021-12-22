@@ -1,8 +1,23 @@
 <header class="py-2">
   <nav class="container d-flex align-items-center justify-content-between">
     <h1 routerLink="/" class="m-0">ColoRouser</h1>
-    <button routerLink="/group" class="py-2 px-3">
-      <i class="fas fa-users"></i>
-    </button>
+    <ng-container *ngIf="toggleGroup; else toggleStudent">
+      <button
+        routerLink="/"
+        class="py-2 px-3"
+        (click)="toggleGroup = !toggleGroup"
+      >
+        <i class="fas fa-user-graduate"></i>
+      </button>
+    </ng-container>
+    <ng-template #toggleStudent>
+      <button
+        routerLink="/group"
+        class="py-2 px-3"
+        (click)="toggleGroup = !toggleGroup"
+      >
+        <i class="fas fa-users"></i>
+      </button>
+    </ng-template>
   </nav>
 </header>

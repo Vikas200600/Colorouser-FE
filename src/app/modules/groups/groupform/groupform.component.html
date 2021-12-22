@@ -1,7 +1,10 @@
+<div class="container">
+  <button routerLink="/" class="px-3 py-2 mt-2">Back</button>
+</div>
 <div class="container my-5 w-50">
   <mat-card class="form-container">
-    <div class="clip-path" style="background-color: #34ab53"></div>
-    <mat-card-header class="text-center"><h2>Add Group</h2></mat-card-header>
+    <div class="clip-path"></div>
+    <mat-card-header><h2 class="form-header">Add Group</h2></mat-card-header>
     <form [formGroup]="groupForm" (ngSubmit)="submitGroupForm()">
       <mat-card-content class="d-flex flex-column">
         <mat-form-field appearance="outline">
@@ -10,8 +13,13 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Color</mat-label>
-          <input matInput autocomplete="off" formControlName="color" />
+          <mat-label>Select Color From Picker</mat-label>
+          <input
+            type="color"
+            matInput
+            autocomplete="off"
+            formControlName="color"
+          />
         </mat-form-field>
 
         <button
@@ -25,5 +33,4 @@
       </mat-card-content>
     </form>
   </mat-card>
-  <button routerLink="/">Back</button>
 </div>

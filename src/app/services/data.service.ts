@@ -39,6 +39,14 @@ export class DataService {
       });
   }
 
+  editStudent(id: string, studentDetails: Student, previousGroup: string) {
+    this.http
+      .post(`api/edit-student/${id}`, { studentDetails, previousGroup })
+      .subscribe((editedData) => {
+        console.log('EditStudent() == editedData', editedData);
+      });
+  }
+
   // addGroup(newGroupDetails) {
   //   newGroupDetails = {
   //     ...newGroupDetails,

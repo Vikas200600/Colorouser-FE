@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -22,13 +23,19 @@ export class StudentformComponent implements OnInit {
     'B-',
     'AB-',
   ];
+  action: string = 'Add';
+  editStudent: object = {};
+  params: string[] = this.route.url.split('/').slice(1);
+  editStudentPreviousHouse: string;
 
   constructor(
     private fb: FormBuilder,
     private dataService: DataService,
+    private http: HttpClient,
     private route: Router
   ) {
     this.studentForm = this.fb.group({
+      id: [''],
       name: ['Vikas', Validators.required],
       mobile: [
         '9090909090',
@@ -40,6 +47,7 @@ export class StudentformComponent implements OnInit {
       ],
       class: ['10C', Validators.required],
       house: ['', Validators.required],
+      color: [''],
       bloodGroup: ['O+', Validators.required],
     });
     this.dataService.groupSubject.subscribe((data) => {
@@ -47,11 +55,19 @@ export class StudentformComponent implements OnInit {
       this.groupData = data;
       this.groupList = this.groupData['keys'];
     });
-    if (this.route.url.split('/').slice(1)[0] === 'edit-student')
-      this.studentForm.patchValue({});
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.params[0] === 'edit-student') {
+      this.action = 'Edit';
+      this.http
+        .get(`api/students/${this.params[1]}`)
+        .subscribe((student: object) => {
+          this.studentForm.patchValue(student['data']);
+          this.editStudentPreviousHouse = this.studentForm.value.house;
+        });
+    }
+  }
 
   setColor() {
     this.studentForm.value.color =
@@ -59,6 +75,14 @@ export class StudentformComponent implements OnInit {
   }
 
   submitStudentData() {
-    this.dataService.addStudent(this.studentForm.value);
+    if (this.params[0] === 'edit-student') {
+      this.dataService.editStudent(
+        this.params[1],
+        this.studentForm.value,
+        this.editStudentPreviousHouse
+      );
+    } else {
+      this.dataService.addStudent(this.studentForm.value);
+    }
   }
 }

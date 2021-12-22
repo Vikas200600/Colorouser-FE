@@ -7,5 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  toggleGroup: boolean = false;
   ngOnInit(): void {}
 }

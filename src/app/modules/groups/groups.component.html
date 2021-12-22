@@ -1,4 +1,16 @@
-<div class="container card-container py-5">
+<nav class="container d-flex justify-content-end">
+  <button
+    routerLink="/group/add-group"
+    class="py-2 px-3 mt-1 d-flex align-items-center"
+  >
+    <i class="fas fa-users me-1"></i>
+    <i class="fas fa-plus small-icon"></i>
+  </button>
+  <div class="bg-icon">
+    <i class="fas fa-users"></i>
+  </div>
+</nav>
+<div class="container card-container py-2">
   <div class="row row-cols-lg-2 g-3">
     <div *ngFor="let group of groupData['keys']" class="col">
       <mat-card class="card p-0" [style.border-color]="groupData[group].color">

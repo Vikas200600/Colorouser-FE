@@ -25,12 +25,15 @@ ul {
 
 .form-container {
   margin-bottom: 2rem;
-  border-bottom: 8px solid #34ab53;
+  border-bottom: 8px solid #ffc0cb;
   button {
     background-color: #34ab53;
     color: white;
     font-weight: bold;
   }
+  // .form-header {
+  // color: white;
+  // }
 }
 
 button {
@@ -61,5 +64,18 @@ button {
     border-radius: 10px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    background-color: #ffc0cb;
   }
+}
+
+.small-icon {
+  font-size: 0.5rem;
+}
+
+.bg-icon {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  font-size: 8rem;
+  color: lighten(black, 70%);
 }

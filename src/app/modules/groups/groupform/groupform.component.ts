@@ -9,11 +9,12 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class GroupformComponent implements OnInit {
   groupForm: FormGroup;
+  _defaultColor: '#ffffff';
 
   constructor(private dataService: DataService, private fb: FormBuilder) {
     this.groupForm = this.fb.group({
       groupName: [''],
-      color: [''],
+      color: ['#ffffff'],
     });
   }
 
