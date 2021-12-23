@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 import { HeaderComponent } from './components/header/header.component';
 import { StudentcardComponent } from './components/studentcard/studentcard.component';
@@ -37,6 +38,7 @@ import { ConfirmdialogComponent } from './components/confirmdialog/confirmdialog
       timeOut: 3000,
       positionClass: 'toast-top-right',
     }),
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
@@ -45,6 +47,7 @@ import { ConfirmdialogComponent } from './components/confirmdialog/confirmdialog
     MatSelectModule,
     MatButtonModule,
     MatDialogModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

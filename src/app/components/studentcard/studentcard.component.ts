@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 })
 export class StudentcardComponent implements OnInit {
   studentData: object;
+  masterKeys: string[];
+  searchKey: string;
 
   constructor(
     private dataService: DataService,
@@ -36,7 +38,17 @@ export class StudentcardComponent implements OnInit {
   getStudentsData() {
     this.dataService.studentSubject.subscribe((data: object) => {
       this.studentData = data;
+      this.masterKeys = this.studentData['keys'];
     });
+  }
+
+  getSearch() {
+    let filteredKeys = this.masterKeys.filter((student) =>
+      this.studentData[student].name
+        .toLowerCase()
+        .includes(this.searchKey.trim().toLowerCase())
+    );
+    this.studentData['keys'] = filteredKeys;
   }
 
   openDialog(id: string, house: string) {
