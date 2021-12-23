@@ -29,7 +29,15 @@
                 [routerLink]="'edit-student/' + studentData[student].id"
                 class="far fa-edit me-2"
               ></i>
-              <i class="far fa-trash-alt"></i>
+              <i
+                (click)="
+                  openDialog(
+                    studentData[student].id,
+                    studentData[student].house
+                  )
+                "
+                class="far fa-trash-alt"
+              ></i>
             </div>
             <img src="https://picsum.photos/200" alt="profile" class="ms-3" />
             <h2

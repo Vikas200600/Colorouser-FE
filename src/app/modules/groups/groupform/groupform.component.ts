@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -13,14 +13,14 @@ export class GroupformComponent implements OnInit {
 
   constructor(private dataService: DataService, private fb: FormBuilder) {
     this.groupForm = this.fb.group({
-      groupName: [''],
-      color: ['#ffffff'],
+      groupName: ['', Validators.required],
+      color: ['', Validators.required],
     });
   }
 
   ngOnInit(): void {}
 
   submitGroupForm() {
-    // this.dataService.addGroup(this.groupForm.value);
+    this.dataService.addGroup(this.groupForm.value);
   }
 }

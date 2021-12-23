@@ -47,14 +47,20 @@ export class DataService {
       });
   }
 
-  // addGroup(newGroupDetails) {
-  //   newGroupDetails = {
-  //     ...newGroupDetails,
-  //     members: [],
-  //   };
-  //   this.groupData[newGroupDetails.groupName] = newGroupDetails;
-  //   this.groupData['keys'].push(newGroupDetails.groupName);
-  //   console.log(this.groupData);
-  //   this.groupSubject.next(this.groupData);
-  // }
+  deleteStudent(id: string, house: string) {
+    console.log('deleting === ', id);
+    this.http
+      .delete(`api/delete-student/${id}/${house}`)
+      .subscribe((deletedData) => {
+        console.log('deleteStudent() == deletedData', deletedData);
+      });
+  }
+
+  addGroup(newGroupDetails) {
+    this.http
+      .post('api/add-group', { ...newGroupDetails })
+      .subscribe((addedData) => {
+        console.log('AddStudent() == addedData', addedData);
+      });
+  }
 }

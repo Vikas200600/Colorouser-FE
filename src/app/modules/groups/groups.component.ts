@@ -13,6 +13,7 @@ export class GroupsComponent implements OnInit {
     private dataService: DataService,
     private cdr: ChangeDetectorRef
   ) {
+    this.dataService.fetchUpdatedData();
     this.getGroupsData();
   }
 

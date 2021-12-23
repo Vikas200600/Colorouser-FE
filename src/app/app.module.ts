@@ -12,10 +12,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { HeaderComponent } from './components/header/header.component';
 import { StudentcardComponent } from './components/studentcard/studentcard.component';
 import { StudentformComponent } from './components/studentcard/studentform/studentform.component';
+import { ConfirmdialogComponent } from './components/confirmdialog/confirmdialog.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { StudentformComponent } from './components/studentcard/studentform/stude
     HeaderComponent,
     StudentcardComponent,
     StudentformComponent,
+    ConfirmdialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { StudentformComponent } from './components/studentcard/studentform/stude
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
