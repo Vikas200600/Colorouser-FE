@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-groups',
@@ -25,5 +26,9 @@ export class GroupsComponent implements OnInit {
     this.dataService.groupSubject.subscribe((chatData: object) => {
       this.groupData = chatData;
     });
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    console.log(event);
   }
 }

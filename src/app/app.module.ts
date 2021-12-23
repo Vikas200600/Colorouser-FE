@@ -15,7 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatIconModule } from '@angular/material/icon';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { HeaderComponent } from './components/header/header.component';
 import { StudentcardComponent } from './components/studentcard/studentcard.component';
@@ -47,7 +47,7 @@ import { ConfirmdialogComponent } from './components/confirmdialog/confirmdialog
     MatSelectModule,
     MatButtonModule,
     MatDialogModule,
-    MatIconModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
