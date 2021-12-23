@@ -4,6 +4,8 @@ import { Student } from '../models/student';
 
 import { BehaviorSubject, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { NotifyService } from './notify.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +14,11 @@ export class DataService {
   studentSubject = new BehaviorSubject<object>({});
   groupSubject = new BehaviorSubject<object>({});
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private notifyService: NotifyService,
+    private route: Router
+  ) {
     console.log('dataservice - constructor called');
     this.fetchUpdatedData();
   }
@@ -36,6 +42,11 @@ export class DataService {
       .post('api/add-student', { ...studentDetails })
       .subscribe((addedData) => {
         console.log('AddStudent() == addedData', addedData);
+        this.notifyService.showSuccess(
+          'Student Added Successfully',
+          'Complete'
+        );
+        this.route.navigateByUrl('/');
       });
   }
 
@@ -44,7 +55,12 @@ export class DataService {
       .post(`api/edit-student/${id}`, { studentDetails, previousGroup })
       .subscribe((editedData) => {
         console.log('EditStudent() == editedData', editedData);
+        this.notifyService.showSuccess(
+          'Student Edited Successfully',
+          'Complete'
+        );
       });
+    this.route.navigateByUrl('/');
   }
 
   deleteStudent(id: string, house: string) {
@@ -53,14 +69,15 @@ export class DataService {
       .delete(`api/delete-student/${id}/${house}`)
       .subscribe((deletedData) => {
         console.log('deleteStudent() == deletedData', deletedData);
+        this.notifyService.showError('Student Deleted Permanently', 'Removed');
       });
   }
 
-  addGroup(newGroupDetails) {
+  addGroup(newGroupDetails: object) {
     this.http
       .post('api/add-group', { ...newGroupDetails })
       .subscribe((addedData) => {
-        console.log('AddStudent() == addedData', addedData);
+        this.notifyService.showSuccess('Group Added Successfully', 'Complete');
       });
   }
 }

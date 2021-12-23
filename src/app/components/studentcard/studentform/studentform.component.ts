@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
+import { NotifyService } from 'src/app/services/notify.service';
 
 @Component({
   selector: 'app-studentform',
@@ -31,6 +32,7 @@ export class StudentformComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private dataService: DataService,
+    private notifyService: NotifyService,
     private http: HttpClient,
     private route: Router
   ) {
