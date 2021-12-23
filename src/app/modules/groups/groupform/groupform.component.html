@@ -1,6 +1,3 @@
-<div class="container">
-  <button routerLink="/" class="px-3 py-2 mt-2">Back</button>
-</div>
 <div class="container my-5 w-50">
   <mat-card class="form-container">
     <div class="clip-path"></div>
@@ -22,15 +19,24 @@
             class="w-25"
           />
         </mat-form-field>
-
-        <button
-          mat-raised-button
-          type="submit"
-          class="w-25 m-auto"
-          [disabled]="!groupForm.valid"
-        >
-          SUBMIT
-        </button>
+        <div class="form-btn d-flex justify-content-center align-items-center">
+          <button
+            mat-raised-button
+            type="submit"
+            class="me-1"
+            [disabled]="!groupForm.valid"
+          >
+            SUBMIT
+          </button>
+          <button
+            class="btn-cancel"
+            mat-raised-button
+            routerLink="/group"
+            class="ms-1"
+          >
+            Cancel
+          </button>
+        </div>
       </mat-card-content>
     </form>
   </mat-card>

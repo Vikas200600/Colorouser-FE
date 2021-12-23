@@ -31,9 +31,9 @@ ul {
     color: white;
     font-weight: bold;
   }
-  // .form-header {
-  // color: white;
-  // }
+  .form-header {
+    color: white;
+  }
 }
 
 button {
@@ -78,4 +78,8 @@ button {
   left: 10px;
   font-size: 9rem;
   color: lighten(black, 70%);
+}
+
+.btn-cancel {
+  background-color: lighten(red, 50%);
 }

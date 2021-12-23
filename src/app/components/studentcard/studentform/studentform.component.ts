@@ -32,7 +32,6 @@ export class StudentformComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private dataService: DataService,
-    private notifyService: NotifyService,
     private http: HttpClient,
     private route: Router
   ) {

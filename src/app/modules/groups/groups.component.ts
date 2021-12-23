@@ -8,7 +8,7 @@ import { CdkDragDrop } from '@angular/cdk/drag-drop';
   styleUrls: ['./groups.component.scss'],
 })
 export class GroupsComponent implements OnInit {
-  groupData: object = {};
+  groupData: object;
 
   constructor(
     private dataService: DataService,

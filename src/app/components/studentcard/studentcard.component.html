@@ -19,9 +19,11 @@
     <i class="fas fa-user-graduate"></i>
   </div>
 </div>
-<div class="container card-container py-3">
-  <div class="row row-cols-lg-5 g-4">
-    <ng-container *ngIf="studentData">
+<div
+  class="container card-container d-flex flex-column align-items-center py-3"
+>
+  <ng-container *ngIf="studentData; else nostudentData">
+    <div class="row row-cols-lg-5 g-4">
       <div *ngFor="let student of studentData['keys']" class="col">
         <mat-card
           class="card p-0"
@@ -85,6 +87,13 @@
           </mat-card-content>
         </mat-card>
       </div>
-    </ng-container>
-  </div>
+    </div>
+  </ng-container>
+  <ng-template #nostudentData>
+    <p class="mt-5 pt-5">No Students Added Yet</p>
+    <p><a routerLink="/add-student">Click here</a> to add Group</p>
+  </ng-template>
+  <ng-container *ngIf="studentData['keys'].length <= 0">
+    <p class="m-5 p-5">No Students Found</p>
+  </ng-container>
 </div>

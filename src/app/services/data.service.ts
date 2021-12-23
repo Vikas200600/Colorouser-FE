@@ -78,6 +78,7 @@ export class DataService {
       .post('api/add-group', { ...newGroupDetails })
       .subscribe((addedData) => {
         this.notifyService.showSuccess('Group Added Successfully', 'Complete');
+        this.route.navigateByUrl('/group');
       });
   }
 }
