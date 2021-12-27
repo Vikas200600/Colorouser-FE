@@ -37,19 +37,19 @@ export class StudentformComponent implements OnInit {
   ) {
     this.studentForm = this.fb.group({
       id: [''],
-      name: ['Vikas', Validators.required],
+      name: ['', Validators.required],
       mobile: [
-        '9090909090',
+        '',
         [
           Validators.required,
           Validators.maxLength(10),
           Validators.minLength(10),
         ],
       ],
-      class: ['10C', Validators.required],
+      class: ['', Validators.required],
       house: ['', Validators.required],
       color: [''],
-      bloodGroup: ['O+', Validators.required],
+      bloodGroup: ['', Validators.required],
     });
     this.dataService.groupSubject.subscribe((data) => {
       console.log('studentForm subs ', data);

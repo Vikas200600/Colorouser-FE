@@ -25,7 +25,7 @@ ul {
 
 .form-container {
   margin-bottom: 2rem;
-  border-bottom: 8px solid #ffc0cb;
+  border-bottom: 8px solid #05386b;
   button {
     background-color: #34ab53;
     color: white;
@@ -64,7 +64,7 @@ button {
     border-radius: 10px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    background-color: #ffc0cb;
+    background-color: #05386b;
   }
 }
 
@@ -82,4 +82,20 @@ button {
 
 .btn-cancel {
   background-color: lighten(red, 50%);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.names {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
